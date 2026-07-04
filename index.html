@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>CLAIZ</title>
+    <meta name="description" content="claiz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- pc表示 -->
+
+      <nav id="navi">
+        <a href="index.html"
+          ><img class="logo" src="img/logo.png" alt="logo"
+        /></a>
+
+        <ul>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#service">SERVICE</a></li>
+          <li><a href="#message">MESSAGE</a></li>
+          <li><a href="#company">COMPANY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+        <!-- <a class="btn" href="#">お問い合わせはこちら</a> -->
+
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <!-- スマホ表示 -->
+      <div class="sp-menu">
+        <div class="sp-menu-box">
+          <div class="sp-menu-top">
+            <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+            <button class="hamburger-close">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#service">SERVICE</a></li>
+            <li><a href="#message">MESSAGE</a></li>
+            <li><a href="#company">COMPANY</a></li>
+          </ul>
+
+          <a class="btn" href="#contact">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="mv">
+        <!-- PC画像 -->
+        <img class="mv-pc" src="img/mv-pc.jpg" alt="メインビジュアル" />
+        <!-- SP画像 -->
+        <img class="mv-sp" src="img/mv-sp.jpg" alt="メインビジュアル" />
+
+        <div class="mv-text">
+          <h1>
+            常識より、<br />
+            <span>熱狂。</span>
+          </h1>
+          <p class="sub">Create experience.</p>
+          <p>
+            心を動かすコンテンツで、<br />
+            まだ見ぬ熱狂をつくりつづける。
+          </p>
+          <a class="mv-btn" href="#contact">お問い合わせはこちら ➝</a>
+        </div>
+
+        <div class="scroll">
+          <span>SCROLL</span>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-img">
+          <img src="img/about.jpg" alt="about" />
+        </div>
+        <div class="section-title">
+          <p class="section-en">ABOUT</p>
+          <h2>私たちについて</h2>
+          <p>
+            私たちは、デジタルの力とエンターテイメントの可能性を掛け合わせ、
+            人の心を動かすコンテンツと体験を提供します。
+          </p>
+          <p>
+            常識にちらわれず、熱狂を生む価値を追求し、
+            新しい未来をつくりつづけます。
+          </p>
+        </div>
+      </section>
+
+      <!-- service(モーダル) -->
+
+      <section id="service" class="service">
+        <div class="section-title">
+          <p class="section-en">SERVICE</p>
+          <h2>事業内容</h2>
+          <p>
+            デジタルとエンターテイメントを通じて、<br />
+            人と企業に新たな価値と感動を届けるサービスを展開しています。
+          </p>
+        </div>
+
+        <div class="service-list">
+          <!-- service01 -->
+          <button class="service-trigger" data-service="service01">
+            <img src="img/icon01.png" alt="icon01" />
+            <!-- <h3>WEB制作</h3>
+            <p>Webサイトの企画・制作・運用までを一貫して行います。</p> -->
+            <span>デジタルコンテンツ企画・創作事業</span>
+            <span class="plus"></span>
+          </button>
+
+          <!-- service02 -->
+          <button class="service-trigger" data-service="service02">
+            <img src="img/icon02.png" alt="icon02" />
+            <!-- <h3>映像制作</h3>
+            <p>
+              企業・商品・サービスの魅力を最大限に引き出す映像を制作します。
+            </p> -->
+            <span>エンターテイメント関連事業</span>
+            <span class="plus"></span>
+          </button>
+
+          <!-- service03 -->
+          <button class="service-trigger" data-service="service03">
+            <img src="img/icon03.png" alt="icon03" />
+            <!-- <h3>グラフィック制作</h3>
+            <p>
+              企業・商品・サービスの魅力を最大限に引き出す映像を制作します。
+            </p> -->
+            <span>SNSマーケティング支援事業</span>
+            <span class="plus"></span>
+          </button>
+
+          <!-- service04 -->
+          <button class="service-trigger" data-service="service04">
+            <img src="img/icon04.png" alt="icon04" />
+            <!-- <h3>イベント企画</h3>
+            <p>
+              企業・商品・サービスの魅力を最大限に引き出す映像を制作します。
+            </p> -->
+            <span>キャリア形成支援事業</span>
+            <span class="plus"></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- SERVICE MODAL(serviceの中身クリックオープン) -->
+      <div class="service-modal modal01" id="service01">
+        <div class="service-modal-box">
+          <button class="service-close" type="button">×</button>
+          <p class="modal-en">SERVICE 01</p>
+          <h3>デジタルコンテンツ企画・創作事業</h3>
+          <p class="modal-text">
+            "人が熱狂するコンテンツ"をデジタル領域で企画・制作しています。<br />
+            動画・SNS・オンラインコンテンツを通じて、<br />
+            継続的な価値と体験を生み出します。
+          </p>
+        </div>
+      </div>
+
+      <div class="service-modal modal02" id="service02">
+        <div class="service-modal-box">
+          <button class="service-close" type="button">×</button>
+          <p class="modal-en">SERVICE 02</p>
+          <h3>エンターテイメント関連事業</h3>
+          <p class="modal-text">
+            人と熱量をつなぎ、誰もが幸せになる エンターテインメントを。<br />
+            ファンコミュニティ形成やデジタル
+            領域での価値提供をサポートしています。
+          </p>
+        </div>
+      </div>
+
+      <div class="service-modal modal03" id="service03">
+        <div class="service-modal-box">
+          <button class="service-close" type="button">×</button>
+          <p class="modal-en">SERVICE 03</p>
+          <h3>SNSマーケティング支援事業</h3>
+          <p class="modal-text">
+            “見られる”ではなく、“選ばれ る”SNSへ。<br />
+            企画設計から運用・分析まで、 一貫したSNSマーケティング支援
+            を行っています。
+          </p>
+        </div>
+      </div>
+
+      <div class="service-modal modal04" id="service04">
+        <div class="service-modal-box">
+          <button class="service-close" type="button">×</button>
+          <p class="modal-en">SERVICE 04</p>
+          <h3>キャリア形成支援事業</h3>
+          <p class="modal-text">
+            人生100年時代。『自分らしい働 き方』はできていますか？<br />
+            個人の価値観や強みに寄り添いな がら、キャリア形成を支援してい ます。
+          </p>
+        </div>
+      </div>
+
+      <!-- service modal ここまで -->
+
+      <!-- message -->
+
+      <section id="message" class="message">
+        <div class="message-title">
+          <p class="message-en">MESSAGE</p>
+          <h2>代表メッセージ</h2>
+          <p>
+            僕らは「熱狂」に、<br />
+            人を動かす力があると考えています。
+          </p>
+          <p>
+            本気で夢中になれるものが、人生や価値観を変えていく。<br />
+            その熱量が、新しい価値や人とのつながりを生み出していく。
+          </p>
+          <p>
+            面白いからやってみる。<br />
+            楽しいから挑戦してみる。
+          </p>
+          <p>
+            それでいい。<br />
+            今は常識にとらわれず、いろんなことに挑戦できる時代です。
+          </p>
+          <p>
+            自分らしく夢中になれる人や場所を、
+            これからも僕らはつくり続けていきます。
+          </p>
+        </div>
+      </section>
+
+      <!-- company -->
+      <section id="company" class="company">
+        <div class="section-title">
+          <p class="section-en">COMPANY</p>
+          <h2>会社概要</h2>
+          <p>
+            挑戦を恐れず、新しい価値を創造する。<br />
+            CLAIZの企業情報をご紹介します。
+          </p>
+        </div>
+
+        <div class="company-list">
+          <dl>
+            <dt>会社名</dt>
+            <dd>株式会社クレイズ(CLAIZ)</dd>
+          </dl>
+
+          <dl>
+            <dt>設立</dt>
+            <dd>2023年1月</dd>
+          </dl>
+
+          <dl>
+            <dt>資本金</dt>
+            <dd>200万円</dd>
+          </dl>
+
+          <!-- <dl>
+            <dt>代表取締役</dt>
+            <dd>南　建任</dd>
+          </dl> -->
+
+          <dl>
+            <dt>所在地</dt>
+            <dd>
+              〒600-8208
+              京都府京都市下京区小稲荷町85番2Ｇｒａｎｄ－Ｋ京都駅前ビル201号
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>事業内容</dt>
+            <dd>
+              デジタルコンテンツ企画・創作事業<br />
+              エンターテイメント関連事業<br />
+              SNSマーケティング支援事業<br />
+              キャリア形成支援事業
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- contact -->
+      <section id="contact" class="contact">
+        <div class="section-title">
+          <p class="section-en">CONTACT</p>
+          <h2>お問い合わせ</h2>
+          <p>
+            お問い合わせは、下記フォームよりお願いいたします。<br />
+            内容を確認後、担当者よりご連絡させていただきます。
+          </p>
+        </div>
+
+        <!-- <form
+          id="contactForm"
+          class="contact-form"
+          action="https://docs.google.com/forms/d/1ZHvFCMK4FBOUNJZMt7SrUa_nLRkRpnoVoh1YFkooIoY/formResponse"
+          method="post"
+          target="hidden_iframe"
+          onsubmit="submitted=true"
+        > -->
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfput5WJF0kR-nxNI3tGdpAoNGr1LJzD_UAaZqiOhVh3Dql7g/formResponse"
+          method="POST"
+          target="hidden_iframe"
+        >
+          
+          <div class="form-item">
+            <label for="name">お名前(仮名でも可)</label>
+            <input
+              type="text"
+              id="name"
+              name="entry.828646106"
+              placeholder="例）山田花子"
+              required
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="age">年齢</label>
+            <input
+              type="number"
+              id="age"
+              name="entry.345532136"
+              placeholder="例）25"
+              required
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="gender">性別</label>
+            <select id="gender" name="entry.1895555690">
+              <option value="">選択してください</option>
+              <option value="女性">女性</option>
+              <option value="男性">男性</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-item">
+            <label for="contact">連絡先</label>
+            <input
+              type="text"
+              id="contact"
+              name="entry.405866667"
+              placeholder="メールアドレスまたは電話番号"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="contact-confirm">連絡先(確認用)</label>
+            <input
+              type="text"
+              id="contact-confirm"
+              name="entry.494794088"
+              placeholder="確認のためもう一度入力してください"
+            />
+          </div>
+
+          <!-- ご希望内容選択 -->
+
+          <div class="form-item">
+            <p class="form-label">ご希望内容選択・お問い合わせ</p>
+
+            <div class="check-list">
+              <label>
+                <input type="checkbox" name="entry.1507098686" value="モデル" />
+                <span>モデル</span>
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="entry.1507098686"
+                  value="スタッフ"
+                />
+                <span>スタッフ</span>
+              </label>
+              <label>
+                <input type="checkbox" name="entry.1507098686" value="その他" />
+                <span>その他</span>
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="entry.1507098686"
+                  value="お問い合わせ"
+                />
+                <span>お問い合わせ</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 備考 -->
+          <div class="form-item">
+            <label for="message">備考(伝えたいこと)</label>
+            <textarea
+              id="message"
+              name="entry.1427254024"
+              placeholder="ご自由にご入力ください"
+            ></textarea>
+          </div>
+
+          <!-- 送信ボタン -->
+          <button type="submit" class="submit-btn">送信する</button>
+        </form>
+
+        <!-- とちゅう↓ -->
+
+        <!-- 送信完了メッセージ（formの外！） -->
+        <p class="form-thanks" id="formThanks" hidden>
+          <strong>送信完了しました。</strong><br /><br />
+          この度はお問合せいただき、誠にありがとうございます。<br />
+          内容を確認の上、担当者よりご連絡いたします。
+        </p>
+
+        <!-- iframe（formの外！） -->
+        <iframe
+          name="hidden_iframe"
+          id="hidden_iframe"
+          style="display: none"
+        ></iframe>
+
+        <!-- とちゅう↑ -->
+
+        <div class="contact-copy">
+          一緒に<br />
+          まだ見ぬ熱狂をつくりませんか？
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <!-- jQuery（CDN） -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- slick（CDN） -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 自分のスクリプト -->
+    <script src="js/main.js" defer></script>
+
+    
+
+  </body>
+</html>

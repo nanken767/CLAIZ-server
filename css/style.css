@@ -1,0 +1,1086 @@
+@charset "UTF-8";
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "Noto Sans JP", sans-serif;
+  /* スクロールゆっくり */
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #2E2824;
+  background-color: #FAF8F5;
+
+}
+
+a { 
+  text-decoration: none;
+  color: #2E2824;
+}
+
+li {
+  list-style: none;
+}
+
+/* ==========================
+   Header
+========================== */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 5%;
+}
+
+#navi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 140px;
+}
+
+/* ==========================
+   PC Menu
+========================== */
+
+#navi ul {
+  display: flex;
+  gap: 50px;
+}
+
+#navi ul li a {
+  font-size: 0.9rem;
+  color: #2E2824;
+  letter-spacing: 0.08em;
+  transition: .3s;
+}
+
+#navi ul li a:hover {
+  color: #D6B28A;
+}
+
+/* ==========================
+   Button
+========================== */
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 220px;
+  height: 50px;
+
+  border-radius: 50px;
+
+  background: #A67C52;
+  color: #fff;
+
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #D6B28A;
+}
+
+/* ==========================
+   Hamburger
+========================== */
+
+.hamburger {
+  display: none;
+
+  width: 45px;
+  height: 45px;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+
+  width: 30px;
+  height: 2px;
+
+  margin: 7px auto;
+
+  background: #4A433E;
+
+  transition: .3s;
+}
+
+/* ==========================
+   SP Menu
+========================== */
+
+.sp-menu {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: .3s;
+}
+
+.sp-menu.is-open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sp-menu-box{
+  width:90%;
+  max-width:420px;
+
+  padding:30px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(20px);
+}
+
+.sp-menu-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.hamburger-close{
+  background:none;
+  border:none;
+}
+
+.hamburger-close span{
+  display:block;
+
+  width:28px;
+  height:2px;
+
+  margin:7px 0;
+
+  background:#4A433E;
+}
+
+.sp-menu ul{
+  margin:50px 0;
+
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+
+  text-align:center;
+}
+
+.sp-menu ul li a{
+  font-size:1.2rem;
+  color:#2E2824;
+}
+
+.sp-menu-top img {
+  width: 120px;
+}
+
+.hamburger-close span{
+    display:block;
+    width:28px;
+    height:2px;
+    background:#4A433E;
+    position:absolute;
+}
+
+.hamburger-close span:nth-child(1){
+    transform: rotate(45deg);
+}
+
+.hamburger-close span:nth-child(2){
+    display:none;
+}
+
+.hamburger-close span:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+.hamburger-close{
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+    top: -5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sp-menu .btn{
+    width:100%;
+    height:50px;
+    border-radius:50px;
+    background:#A67C52;
+    color:#fff;
+    transition:.3s;
+
+    
+}
+
+.sp-menu .btn:hover {
+  background: #D6B28A;
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 30px rgba(184, 138, 85, 0.3);
+}
+
+.sp-menu ul li a:hover {
+  color: #D6B28A;
+}
+
+/* メインビジュアル */
+
+#mv {
+  position: relative;
+}
+
+#mv img {
+  width: 100%;
+  height: auto;
+  /* display: block; */
+}
+
+/* pc */
+.mv-pc{ 
+  display: block;
+}
+
+/* sp */
+.mv-sp {
+  display: none;
+}
+
+.mv-text {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  /* text-align: center; */
+}
+
+.mv-text h1 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.4;
+  color: #2E2824;
+  font-family: "Zen old Mincho", serif;
+  /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+}
+
+.mv-text h1 span {
+  background: linear-gradient(
+    90deg,
+  #8C6239 0%,
+  #C8A96A 35%,
+  #E3C98B 55%,
+  #8C6239 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.mv-text p {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-family: "Zen old Mincho", serif;
+  font-weight: bold;
+  color: #2E2824;
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+}
+
+.mv-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 220px;
+  height: 50px;
+
+  margin-top: 40px;
+
+  border-radius: 50px;
+
+  background: #A67C52;
+  color: #fff;
+
+  transition: .3s;
+  transition: .3s;
+}
+
+.mv-btn:hover {
+  /* background: linear-gradient(
+    90deg,
+  #8C6239 0%,
+  #C8A96A 35%,
+  #E3C98B 55%,
+  #8C6239 100%
+  ); */
+  background: #D6B28A;
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 30px rgba(184, 138, 85, 0.3);
+}
+
+.mv-text .sub {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-family: "Zen old Mincho", serif;
+  color: #A88A6B;
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll span {
+  
+  font-size: 0.8rem;
+  color: #A88A6B;
+  letter-spacing: 2em;
+ 
+}
+
+.scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 70px;
+  margin: 15px auto 0;
+  background-color: #A88A6B;
+   animation: scrollAnimation 1.5s infinite;
+}
+
+@keyframes scrollAnimation {
+  
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+}
+
+
+/* ABOUT */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: #FAF8F5;
+}
+
+.about img {
+  padding: 80px 0 80px 8%;
+}
+
+.about-img img{
+ /* padding: 10%; */
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+/* もともとabout-titleやったのを section-title に変更 */
+
+.section-title {
+  padding: 80px 8%;
+}
+
+.section-title .section-en {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: #b88a55;
+  margin-bottom: 16px;
+}
+
+.section-title h2 {
+  font-family: "Zen old Mincho", serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #2E2824;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.section-title p {
+  font-family: "Zen old Mincho", serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #4A433e;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+
+/* service */
+
+#service {
+  background-color: #FAF8F5;
+ 
+}
+
+.service-list {
+  max-width: 1000px;
+  margin: 0px auto 0;
+  padding: 0px 7% ;
+}
+
+.service-trigger {
+  width: 100%;
+  padding: 35px 0;
+  display: grid;
+  grid-template-columns: 80px 1fr 40px;
+  align-items: center;
+  gap: 30px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #D8cec2;
+  cursor: pointer;
+  text-align: left;
+  transition: .3s;
+}
+
+.service-trigger:hover {
+  /* あとでチェック */
+  background: #f9d7af;
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 30px rgba(184, 138, 85, 0.3);
+}
+
+.service-trigger img {
+  width: 80px;
+  display: block;
+}
+
+.service-trigger h3 {
+  font-family: "Zen old Mincho", serif;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  color: #2E2824;
+  margin-bottom: 8px;
+}
+
+/* ＋ */
+
+.plus {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  justify-self: end;
+}
+
+.plus::before,
+.plus::after {
+  content: '';
+  position: absolute;
+  background: #C8A96A;
+  transition: .3s;
+}
+
+.plus::before {
+  top: 50%;
+  left: 0;
+  width: 28px;
+  height: 2px;
+ 
+}
+.plus::after {
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 28px;
+  
+}
+
+/* service modal */
+
+.service-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+  z-index: 1000;
+}
+
+.service-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Modal box */
+
+.service-modal-box {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  min-height: 500px;
+  padding: 25px;
+  overflow: hidden;
+  /* background-image:
+  linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .95) 0%,
+    rgba(255, 255, 255, .85) 45%,
+    rgba(255, 255, 255, .15) 100%,
+  ),
+  url(../img/service01.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .2); */
+  background-size: cover;
+  background-position: center;
+}
+
+.modal01 .service-modal-box{
+  background-image:
+  /* linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .95) 0%,
+    rgba(255, 255, 255, .85) 45%,
+    rgba(255, 255, 255, .15) 100%,
+  ), */
+  url(../img/service01.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+}
+
+.modal02 .service-modal-box{
+   background-image:
+  /* linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .95) 0%,
+    rgba(255, 255, 255, .85) 45%,
+    rgba(255, 255, 255, .15) 100%,
+  ), */
+  url(../img/service02.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+}
+
+.modal03 .service-modal-box{
+   background-image:
+    /* linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .95) 0%,
+      rgba(255, 255, 255, .85) 45%,
+      rgba(255, 255, 255, .15) 100%,
+    ), */
+  url(../img/service03.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+}
+
+.modal04 .service-modal-box{
+   background-image:
+  /* linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .95) 0%,
+    rgba(255, 255, 255, .85) 45%,
+    rgba(255, 255, 255, .15) 100%,
+  ), */
+  url(../img/service04.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+}
+
+
+/* CLOSE */
+
+.service-close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #C8A96A;
+  transition: .3s;
+}
+
+.service-close:hover {
+  color: #D6B28A;
+  transform: translateY(-3px);
+  /* もしくは */
+  /* transform: rotate(90deg); */
+  box-shadow: 0px 15px 30px rgba(184, 138, 85, 0.3);
+}
+
+
+/* message */
+
+.message {
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)),
+  url(../img/message-pc.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.message-title {
+  padding: 70px 7% 50px;
+  margin-top: 90px;
+}
+
+.message-title .message-en {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: #FDFBF8;
+  margin-bottom: 16px;
+   text-shadow: 0px 3px 15px rgba(0, 0, 0, .35);
+   
+}
+
+.message-title h2 {
+  font-family: "Zen old Mincho", serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #FDFBF8;
+  margin-bottom: 32px;
+  font-weight: 400;
+  text-shadow: 0px 3px 15px rgba(0, 0, 0, .35);
+}
+
+.message-title p {
+  font-family: "Zen old Mincho", serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #FDFBF8;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  text-shadow: 0px 3px 15px rgba(0, 0, 0, .35);
+}
+
+
+/* COMPANY */
+.company {
+  
+  padding: 80px 0;
+}
+
+.company-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 7%;
+}
+
+.company-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  border: 1px solid #D8cec2;
+  padding: 50px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.company-list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.company-list dl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.company-list dt {
+  font-weight: bold;
+  color: #2E2824;
+  
+}
+
+.company-list dd {
+  margin: 0;
+  color: #4A433e;
+  line-height: 1.6;
+}
+
+
+/* contact (求人)*/
+
+.contact {
+ 
+  background: #FAF8F5;
+}
+
+.contact-form {
+  max-width: 620px;
+  margin: 70px auto 0;
+}
+
+.form-item {
+  margin-bottom: 24px;
+}
+
+.form-item label ,
+.form-label {
+ display: block;
+ margin-bottom: 10px;
+ color: #2E2824;
+ font-size: 0.95rem;
+}
+
+.form-item input ,
+.form-item select ,
+.form-item textarea {
+  width: 100%;
+  padding: 18px 22px;
+  border: 1px solid #D8cec2;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .65);
+  color: #2E2824;
+  font-family: inherit;
+}
+
+.form-item template {
+  min-height: 150px;
+  border-radius: 28px;
+  resize: vertical;
+}
+
+.check-list {
+  padding: 22px;
+  border: 1px solid #D8cec2;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .65);
+  color: #2E2824;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 28px;
+}
+
+.check-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.check-list input {
+  width: auto;
+}
+
+.submit-btn {
+  display: block;
+   width:240px;
+    height:55px;
+    margin: 45px auto 0;
+    border-radius:50px;
+    background:#A67C52;
+    color:#fff;
+    cursor: pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover {
+   background: #D6B28A;
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 30px rgba(184, 138, 85, 0.3);
+}
+
+/* .contact-copy { */
+  /* margin-top: 70px; */
+  /* text-align: center;
+  font-family: "Zen Old Mincho" , serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.8;
+  color: #2E2824;
+  background-image:  */
+  /* linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), */
+  /* url(../img/contact.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 120px 7% ; */
+/* } */
+
+.contact-copy {
+  padding: 120px 20px 120px;
+
+  background-image: url("../img/contact-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+
+  text-align: center;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #2E2824;
+}
+
+/*  送信後メッセージ */
+
+/* .form-thanks {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #8A5A44;
+  margin-top: 60px;
+  max-width: 620px;
+  margin: 60px auto 0;
+  padding: 70px 7%;
+  background-color: #fbd3ab;
+
+} */
+
+.form-thanks {
+  max-width: 620px;
+  margin: 60px auto 0;
+  padding: 70px 30px;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.65)
+    ),
+    url("../img/contact-thanks-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 1px solid #d8cec2;
+  border-radius: 30px;
+
+  text-align: center;
+  color: #2e2824;
+  line-height: 2;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.form-thanks strong {
+  display: block;
+  margin-bottom: 18px;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: #8a5a44;
+}
+
+
+
+
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:767px){
+
+#navi ul,
+#navi .btn{
+    display:none;
+}
+
+#navi .hamburger{
+    display:block;
+}
+
+.logo{
+    width:120px;
+}
+
+.mv-pc {
+  display: none;
+}
+
+.mv-sp {
+  display: block;
+  width: 100%;
+  /* border-bottom-left-radius: 50% 80px;
+  border-bottom-right-radius: 50% 80px; */
+}
+
+.mv-text{
+  left: 8%;
+  top: 55%;
+}
+
+.mv-text h1{
+  font-size: clamp(3rem, 5vw, 4rem); 
+}
+
+.mv-text p{
+  font-size: clamp(1rem, 2vw, 1.3rem);
+
+}
+
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  top: 80%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ABOUT-SP */
+.about {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.about-img,
+.about-text {
+  width: 100%;
+}
+
+.about img {
+  height: 280px;
+}
+
+.about-img img{
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+}
+
+/* ABOU */
+/* もともとabout-titleやったのを section-title に変更 */
+
+.section-title {
+  padding: 70px 7% 50px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.section-title p {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.service-trigger img {
+  width: 48px;
+}
+
+/* COMPANY */
+
+.company-list {
+  display: block;
+  border: 1px solid #D8cec2;
+  padding: 50px 30px;
+  margin: 0 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.company-list dd {
+  margin: 0;
+  color: #4A433e;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* CONTACT(求人)スマホ */
+
+.contact-form {
+  margin: 0 7%;
+}
+
+.check-list {
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* service(事業内容・スマホ) */
+  .modal01 .service-modal-box {
+    background-image:
+    url(../img/service01-sp.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+  }
+  .modal02 .service-modal-box {
+    background-image:
+    url(../img/service02-sp.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+  }
+  .modal03 .service-modal-box {
+    background-image:
+    url(../img/service03-sp.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+  }
+  .modal04 .service-modal-box {
+    background-image:
+    url(../img/service04-sp.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+  }
+
+}
+
+
+}
