@@ -494,6 +494,8 @@ header {
 .service-trigger img {
   width: 80px;
   display: block;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .service-trigger h3 {
