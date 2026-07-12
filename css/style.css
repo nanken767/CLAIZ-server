@@ -867,6 +867,8 @@ header {
   font-family: "Zen Old Mincho", serif;
   font-size: clamp(1.3rem, 4vw, 2rem);
   color: #2E2824;
+  /* border-radius: 0 0 80px 80px; */
+  /* margin-bottom: -3px; */
 }
 
 /*  送信後メッセージ */
@@ -916,6 +918,61 @@ header {
   font-family: "Zen Old Mincho", serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: #8a5a44;
+}
+
+.footer {
+  background: #F8F0E6;
+  padding: 80px 20px 40px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo{
+  width: 180px;
+  margin-bottom: 24px;
+}
+
+.footer-copy {
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 40px;
+  color: #5A4638;
+
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #5A4638;
+  text-decoration: none;
+  transform: .3s;
+  font-weight: bold;
+}
+
+.footer-nav a:hover {
+  opacity: .7;
+}
+
+.footer-address {
+  line-height: 2;
+  color: #715847;
+  margin-bottom: 40px;
+}
+
+.copyright{
+  font-size: .8rem;
+  color: #8A7B6F;
 }
 
 
