@@ -920,6 +920,8 @@ header {
   color: #8a5a44;
 }
 
+/* footer pc */
+
 .footer {
   background: #F8F0E6;
   padding: 80px 20px 40px;
@@ -933,7 +935,7 @@ header {
 
 .footer-logo{
   width: 180px;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 
 .footer-copy {
@@ -1137,14 +1139,22 @@ header {
     box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
   }
 
+  /* footer sp */
+
   .footer {
-    padding: 60px 20px 30px;
+    padding: 40px 20px 30px;
   }
 
   .footer-nav {
     flex-direction: column;
     gap: 20px;
   }
+
+  .footer-logo{
+  width: 150px;
+  margin-bottom: 25px;
+}
+
 
 }
 
