@@ -957,7 +957,7 @@ header {
   color: #5A4638;
   text-decoration: none;
   transform: .3s;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .footer-nav a:hover {
@@ -1137,7 +1137,18 @@ header {
     box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
   }
 
+  .footer {
+    padding: 60px 20px 30px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
 }
+
+
 
 
 }
