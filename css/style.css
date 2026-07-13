@@ -977,6 +977,38 @@ header {
   color: #8A7B6F;
 }
 
+/* プライバシーポリシー */
+
+.privacy {
+  padding: 130px 20px 120px;
+  background: #FAF8F5;
+}
+
+.privacy-box {
+  max-width: 900px;
+  margin: 10px auto 0;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.privacy-box h3 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #A67C52;
+  font-size: 20px;
+}
+
+.privacy-box h3:first-child {
+  margin-top: 0;
+}
+
+.privacy-box p {
+  color: #5A4638;
+  line-height: 2;
+}
+
+
 
 
 
