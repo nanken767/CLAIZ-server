@@ -1187,6 +1187,12 @@ header {
   margin-bottom: 25px;
 }
 
+/* プライバシーポリシー */
+
+.privacy {
+  padding: 100px 20px 120px;
+}
+
 
 }
 
