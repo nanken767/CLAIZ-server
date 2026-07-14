@@ -308,7 +308,8 @@ header {
 
 .mv-text h1 span {
   background: linear-gradient(
-    90deg,
+    80deg, 
+    /* ↑はじめは90deg */
   #8C6239 0%,
   #C8A96A 35%,
   #E3C98B 55%,
@@ -317,6 +318,7 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+  
 }
 
 .mv-text p {
