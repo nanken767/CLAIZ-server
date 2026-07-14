@@ -1153,12 +1153,13 @@ header {
 /* modal sp */
 
 .service-modal-box h3 {
-  width: 420px;
-  font-size: 1.3rem;
+  width: 100%;
+  font-size: 1rem;
   line-height: 1.7;
   color: #2E2824;
   font-family: "Zen Old Mincho" ,serif;
   margin-bottom: 20px;
+  font-weight: 800;
 }
 
 
@@ -1166,7 +1167,7 @@ header {
   width: 100%;
   line-height: 2.2;
   color: #2E2824;
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: 500;
   /* text-shadow: 0 0 12px rgba(128, 128, 246, 0.3); */
 }
@@ -1233,6 +1234,8 @@ header {
     background-position: center;
     box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
   }
+
+  
 
   /* footer sp */
 
