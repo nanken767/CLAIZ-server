@@ -897,8 +897,7 @@ header {
 /* } */
 
 .contact-copy {
-  padding: 120px 20px 120px;
-
+  padding: 300px 20px 120px;
   background-image: url("../img/contact-bg.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -909,6 +908,10 @@ header {
   color: #2E2824;
   /* border-radius: 0 0 80px 80px; */
   /* margin-bottom: -3px; */
+}
+
+.contact-copy-text {
+  transform: translateY(-140px);
 }
 
 /*  送信後メッセージ */
@@ -959,6 +962,8 @@ header {
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: #8a5a44;
 }
+
+
 
 /* footer pc */
 
@@ -1203,6 +1208,17 @@ header {
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
+
+/* 一緒にまだみぬ熱狂つくりませんか　のキャッチコピー */
+
+.contact-copy {
+  padding: 120px 20px 120px;
+}
+
+.contact-copy-text {
+  transform: translateY(0px);
+}
+
 
 @media screen and (max-width: 768px) {
 
