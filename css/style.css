@@ -288,9 +288,14 @@ header {
   /* text-align: center; */
   backdrop-filter: blur(3px);
   background: rgba(255,255,255,.12);
-  padding: 10px 0;
+  background: linear-gradient(
+    to left,
+    rgba(255,255,255,.30),
+    rgba(255,255,255,.0)
+  );
+  padding: 20px;
   border-radius: 20px;
-  /* ↑　4行はテキストの文字が見やすいようにガラス使用にした */
+  /* ↑　289行からはテキストの文字が見やすいようにガラス使用にした */
 }
 
 .mv-text h1 {
@@ -670,6 +675,33 @@ header {
   box-shadow: 0px 15px 30px rgba(184, 138, 85, 0.3);
 }
 
+/* モーダル開いたとき出てくる中身 */
+.modal-en {
+  color: #C8A96A;
+  letter-spacing: .3em;
+  margin: 20px;
+  font-family: "Coemorent Garamond" ,serif;
+  font-weight: bold;
+}
+
+.service-modal-box h3 {
+  width: 420px;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #2E2824;
+  font-family: "Zen Old Mincho" ,serif;
+  margin-bottom: 30px;
+}
+
+.modal-text {
+  width: 100%;
+  line-height: 2.2;
+  color: #2E2824;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-shadow: 0 0 12px rgba(142, 175, 253, 0.482);
+}
+
 
 /* message */
 
@@ -1045,17 +1077,19 @@ header {
 .mv-sp {
   display: block;
   width: 100%;
+  object-position: center 20%;
   /* border-bottom-left-radius: 50% 80px;
   border-bottom-right-radius: 50% 80px; */
 }
 
 .mv-text{
-  left: 8%;
+  left: 3%;
   top: 60%;
 }
 
 .mv-text h1{
   font-size: clamp(3rem, 5vw, 4rem); 
+  text-shadow: 0 2px 12px rgba(252, 249, 245, 0.3);
 }
 
 .mv-text p{
@@ -1116,6 +1150,28 @@ header {
   width: 70px;
 }
 
+/* modal sp */
+
+.service-modal-box h3 {
+  width: 420px;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #2E2824;
+  font-family: "Zen Old Mincho" ,serif;
+  margin-bottom: 20px;
+}
+
+
+.modal-text {
+  width: 100%;
+  line-height: 2.2;
+  color: #2E2824;
+  font-size: 1rem;
+  font-weight: 500;
+  /* text-shadow: 0 0 12px rgba(128, 128, 246, 0.3); */
+}
+
+
 /* COMPANY */
 
 .company-list {
@@ -1146,6 +1202,7 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+
 
     /* service(事業内容・スマホ) */
   .modal01 .service-modal-box {
