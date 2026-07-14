@@ -288,7 +288,7 @@ header {
   /* text-align: center; */
   backdrop-filter: blur(3px);
   background: rgba(255,255,255,.12);
-  padding: 10px 0px 20px 30px;
+  padding: 40px;
   border-radius: 20px;
   /* ↑　4行はテキストの文字が見やすいようにガラス使用にした */
 }
