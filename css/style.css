@@ -76,69 +76,223 @@ li {
 .fairy-body {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  z-index: 3;
+  bottom: 60px;
+  z-index: 10;
 
-  width: 95px;
+  width: 150px;
   height: auto;
 
   transform: translateX(-50%);
   pointer-events: none;
 }
 
-/* 羽共通 */
 
+
+/* 左の羽 */
+
+.fairy-wing-left {
+  left: -10px;
+  top: -55px;
+   width: 190px;
+  transform: rotate(-45deg);
+  animation: wingFlapLeft 0.65s
+  ease-in-out infinite alternate;
+  opacity: 0.3;
+   z-index: 5;
+}
+
+/* 右の羽 */
+
+.fairy-wing-right {
+  left: -10px;
+  top: -55px;
+   width: 190px;
+   transform: scale(-1) rotate(50deg);
+  animation: wingFlapRight 0.65s
+  ease-in-out infinite alternate;
+  opacity: 0.4;
+  z-index: 9;
+
+}
+
+
+/* 羽共通 */
 .fairy-wing {
   position: absolute;
   z-index: 2;
 
-  width: 55px;
+  width: 150px;
   height: auto;
 
   transform-origin: left bottom;
   pointer-events: none;
 }
 
-/* 左の羽 */
-
+/* 左側の羽 */
 .fairy-wing-left {
-  left: 22px;
-  top: 15px;
-
+  left: -15px;
+ width: 190px;
   transform: rotate(-35deg);
-  animation: wingFlapLeft 0.65s
-  ease-in-out infinite alternate;
+  animation: wingFlapLeft 0.65s ease-in-out infinite alternate;
+   opacity: 0.25;
 }
 
-/* 右の羽 */
-
+/* 右側の羽 */
 .fairy-wing-right {
-  right: 16px;
-  top: 18px;
+  left: -250px;
+  top: -120px;
+  width: 190px;
 
   transform-origin: right bottom;
-  transform: scaleX(-1)
-  rotate(-35deg);
-  animation: wingFlapRight 0.65s
-  ease-in-out infinite alternate;
+  transform: scaleX(-1) rotate(-35deg);
+  animation: wingFlapRight 0.65s ease-in-out infinite alternate;
+   opacity: 0.25;
 }
 
 /* シャボン玉 */
 
 .fairy-bubble {
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 50%;
-  z-index: 4;
+  z-index: -2;
 
   display: grid;
   place-items: center;
 
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: 70px;
 
-  /* ここから　疲れた　また明日 */
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.95) 0 6%,
+      transparent 7%
+    ),
+    radial-gradient(
+      circle at 65% 70%,
+      rgba(205, 215, 250, 0.4),
+      transparent 45%
+    ),
+ rgba(255, 255, 255, 0.25);
+
+  box-shadow: 
+    inset 0 0 12px rgb(255,255,255,0.8),
+    0 5px 20px rgb(166,124,82,0.18)
+  ;
+
+
+  backdrop-filter: blur(3px);
+  transform: translateX(-50%);
+  animation: bubbleFloating 2.2s
+  ease-in-out infinite;
+
 }
+
+/* ↑ */
+
+.fairy-arrow {
+  color: #a67c52;
+  font-family: serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* ホバー */
+
+.fairy-top-btn:hover .fairy-character {
+  animation-duration: 1.4;
+}
+
+.fairy-top-btn:hover .fairy-wing-left,
+.fairy-top-btn:hover .fairy-wing-right {
+  animation-duration: 0.3s;
+}
+
+/* ========================================
+   通常時のアニメーション
+======================================== */
+
+@keyframes fairyFloating {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+@keyframes bubbleFloating {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-5px) scale(1.04);
+  }
+}
+
+@keyframes wingFlapLeft {
+  from {
+    transform: rotate(-20deg) scaleY(0.88);
+  }
+
+  to {
+    transform: rotate(-20deg) scaleY(1.05);
+  }
+}
+
+@keyframes wingFlapRight {
+  from {
+    transform: scaleX(-1) rotate(-20deg) scaleY(0.88);
+  }
+
+  to {
+    transform: scaleX(-1) rotate(-20deg) scaleY(1.05);
+  }
+}
+
+/* ========================================
+   押した時：上へ飛んでいく
+======================================== */
+
+.fairy-top-btn.is-flying {
+  pointer-events: none;
+  animation: fairyFlyToTop 1.2s ease-in forwards;
+}
+
+.fairy-top-btn.is-flying .fairy-character {
+  animation: none;
+}
+
+.fairy-top-btn.is-flying .fairy-wing-left,
+.fairy-top-btn.is-flying .fairy-wing-right {
+  animation-duration: 0.12s;
+}
+
+@keyframes fairyFlyToTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  20% {
+    transform: translateY(10px) scale(0.98);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh) scale(0.7);
+  }
+}
+
+
+
 
 
 
@@ -1396,10 +1550,67 @@ header {
   padding: 100px 20px 120px;
 }
 
+/* ========================================
+   スマホ
+======================================== */
+
+  .fairy-top-btn {
+    right: 8px;
+    bottom: 12px;
+
+    width: 90px;
+    height: 125px;
+  }
+
+  .fairy-character {
+    width: 85px;
+    height: 105px;
+  }
+
+  .fairy-body {
+    width: 78px;
+  }
+
+  .fairy-wing {
+    width: 43px;
+  }
+
+  .fairy-wing-left {
+    left: 18px;
+    top: 17px;
+  }
+
+  .fairy-wing-right {
+    right: 12px;
+    top: 18px;
+  }
+
+  .fairy-bubble {
+    width: 42px;
+    height: 42px;
+  }
+
+  .fairy-arrow {
+    font-size: 21px;
+  }
+}
+
+/* 動きを減らす設定の人に配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .fairy-character,
+  .fairy-bubble,
+  .fairy-wing {
+    animation: none;
+  }
+
+  .fairy-top-btn.is-flying {
+    animation: none;
+  }
+}
+
 
 }
 
 
 
 
-}

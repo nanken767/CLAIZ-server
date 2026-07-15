@@ -90,6 +90,49 @@ iframe.onload = function () {
 };
 
 
+/* ========================================
+   妖精TOPボタン
+======================================== */
+
+const fairyTopBtn = document.getElementById("fairyTopBtn");
+
+if (fairyTopBtn) {
+  let isFlying = false;
+
+  // 300px以上スクロールすると表示
+  window.addEventListener("scroll", function () {
+    if (isFlying) return;
+
+    if (window.scrollY > 300) {
+      fairyTopBtn.classList.add("is-show");
+    } else {
+      fairyTopBtn.classList.remove("is-show");
+    }
+  });
+
+  fairyTopBtn.addEventListener("click", function () {
+    if (isFlying) return;
+
+    isFlying = true;
+    fairyTopBtn.classList.add("is-flying");
+
+    // 妖精が上へ飛び始める
+    window.setTimeout(function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 350);
+
+    // アニメーション後に元へ戻す
+    window.setTimeout(function () {
+      fairyTopBtn.classList.remove("is-flying");
+      fairyTopBtn.classList.remove("is-show");
+      isFlying = false;
+    }, 1400);
+  });
+}
+
 
 
 
