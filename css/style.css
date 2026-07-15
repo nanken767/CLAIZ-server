@@ -23,6 +23,125 @@ li {
   list-style: none;
 }
 
+/* 妖精 TOP　ボタン*/
+
+.fairy-top-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9999;
+
+  width: 115px;
+  height: 150px;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: 
+    opacity 0.5s ease,
+    visibility 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* スクロール後に表示 */
+.fairy-top-btn.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 妖精全体 */
+
+.fairy-character {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  display: block;
+  width: 105px;
+  height: 125px;
+
+  transform: translateX(-50%);
+  animation: fairyFloating 2.8s
+  ease-in-out infinite;
+}
+
+/* 妖精本体 */
+
+.fairy-body {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 3;
+
+  width: 95px;
+  height: auto;
+
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* 羽共通 */
+
+.fairy-wing {
+  position: absolute;
+  z-index: 2;
+
+  width: 55px;
+  height: auto;
+
+  transform-origin: left bottom;
+  pointer-events: none;
+}
+
+/* 左の羽 */
+
+.fairy-wing-left {
+  left: 22px;
+  top: 15px;
+
+  transform: rotate(-35deg);
+  animation: wingFlapLeft 0.65s
+  ease-in-out infinite alternate;
+}
+
+/* 右の羽 */
+
+.fairy-wing-right {
+  right: 16px;
+  top: 18px;
+
+  transform-origin: right bottom;
+  transform: scaleX(-1)
+  rotate(-35deg);
+  animation: wingFlapRight 0.65s
+  ease-in-out infinite alternate;
+}
+
+/* シャボン玉 */
+
+.fairy-bubble {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 4;
+
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  /* ここから　疲れた　また明日 */
+}
+
+
+
 /* ==========================
    Header
 ========================== */
