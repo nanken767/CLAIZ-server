@@ -1597,14 +1597,14 @@ header {
     left: px;
     top: -10px;
     width: 130px;
-     opacity: 0.5;
+     opacity: 0.3;
   }
 
   .fairy-wing-right {
     left: -150px;
     top: -50px;
     width: 125px;
-     opacity: 0.5;
+     opacity: 0.3;
   }
 
   .fairy-bubble {
